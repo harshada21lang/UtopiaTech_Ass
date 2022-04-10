@@ -53,8 +53,8 @@
       <!-- Map marker -->
       <div class="container" id="status">
         <agm-map [latitude]="lat" [longitude]="long" [zoom]="zoom">
-          <agm-marker [latitude]="this.lng1" [longitude]="this.lng1">
-            <!-- <agm-info-window #infoWindow> Hello </agm-info-window> -->
+          <agm-marker [latitude]="this.lat1" [longitude]="this.lng1">
+            <agm-info-window #infoWindow>{{"Lat: " + this.lat1 + ", Long: "+ this.lng1}}</agm-info-window>
           </agm-marker>
         </agm-map>
       </div>
