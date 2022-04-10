@@ -1,0 +1,77 @@
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  height: 70px;
+  background-color: #43919b;
+}
+
+.header {
+  background: linear-gradient(to left, #18fbd6, #3e015b);
+  padding: 10px 10px 10px;
+  height: 70px;
+  text-align: center;
+}
+
+.h2 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+}
+
+.cancel-btn {
+  background: lightgray;
+  padding: 10px 10px 10px;
+  text-align: center;
+  height: 70px;
+}
+
+.clear-icon {
+  color: white;
+  font-weight: bold;
+}
+.example-container {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid rgba(0, 0, 0, 0.5); */
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+  width: 400px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+#status {
+  margin-top: 5%;
+  margin-bottom: 15%;
+}
+
+agm-map {
+  height: 300px;
+}

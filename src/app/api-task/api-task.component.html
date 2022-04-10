@@ -1,0 +1,110 @@
+<!-- Device Status Drawer -->
+<mat-drawer-container class="example-container st-menu st-effect" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-toolbar class="header">
+      <span class="h2">Device Status</span>
+      <span class="example-spacer"></span>
+      <mat-icon class="clear-icon">clear</mat-icon>
+    </mat-toolbar>
+    <div>
+      <!-- table contains parameters and R-Phase -->
+      <table id="status" align="center">
+        <thead>
+          <tr>
+            <th style="height: 40px">Parameters</th>
+            <th style="height: 40px">R Phase</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Voltage Status</td>
+            <td>{{ this.volt_status }}</td>
+          </tr>
+          <tr>
+            <td>MCB Status</td>
+            <td>{{ this.mcb_status }}</td>
+          </tr>
+          <tr>
+            <td>Load Status</td>
+            <td>{{ this.load_status }}</td>
+          </tr>
+          <tr>
+            <td>PF Status</td>
+            <td>{{ this.pf_status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="example-sidenav cancel-btn">
+      <button type="button" mat-button (click)="drawer.toggle()">Cancel</button>
+    </div>
+  </mat-drawer>
+
+  <!-- Location drawer -->
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer1 class="example-sidenav" mode="side">
+      <mat-toolbar class="header">
+        <span class="h2">Location</span>
+        <span class="example-spacer"></span>
+        <mat-icon class="clear-icon">clear</mat-icon>
+      </mat-toolbar>
+
+      <!-- Map marker -->
+      <div class="container" id="status">
+        <agm-map [latitude]="lat" [longitude]="long" [zoom]="zoom">
+          <agm-marker [latitude]="this.lng1" [longitude]="this.lng1">
+            <!-- <agm-info-window #infoWindow> Hello </agm-info-window> -->
+          </agm-marker>
+        </agm-map>
+      </div>
+
+      <div class="example-sidenav cancel-btn">
+        <button type="button" mat-button (click)="drawer1.toggle()">
+          Cancel
+        </button>
+      </div>
+    </mat-drawer>
+
+    <!-- drawer main container -->
+    <div class="example-sidenav-content">
+      <table class="table center" id="table1">
+        <thead>
+          <tr>
+            <th scope="col">Panel Name</th>
+            <th scope="col">Mac Id</th>
+            <th scope="col">Lat</th>
+            <th scope="col">Long</th>
+            <th scope="col">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of parsedJson">
+            <td>
+              <button
+                data-effect="st-effect"
+                class="btn btn-outline-dark"
+                mat-raised-button
+                (click)="[getId(i.mac_id), drawer.toggle()]"
+              >
+                <mat-toolbar>{{ i.panel_name }}</mat-toolbar>
+              </button>
+            </td>
+            <td>{{ i.mac_id }}</td>
+            <td>{{ i.Lat }}</td>
+            <td>{{ i.Lng }}</td>
+            <td>
+              <button
+                class="btn btn-outline-dark"
+                mat-raised-button
+                (click)="[getId(i.panel_name), drawer1.toggle()]"
+              >
+                <mat-toolbar><mat-icon>location_on</mat-icon></mat-toolbar>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-drawer-container>
+</mat-drawer-container>
