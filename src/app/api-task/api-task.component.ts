@@ -37,7 +37,6 @@ export class ApiTaskComponent implements OnInit {
     this.pf_status = this.status.r_pf_status;
     this.lat1 = this.status.Lat;
     this.lng1 = this.status.Lng;
-    console.log(this.lat1 + ' ' + this.lng1);
   }
 
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
