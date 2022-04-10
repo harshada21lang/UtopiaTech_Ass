@@ -82,12 +82,11 @@
           <tr *ngFor="let i of parsedJson">
             <td>
               <button
-                data-effect="st-effect"
                 class="btn btn-outline-dark"
                 mat-raised-button
                 (click)="[getId(i.mac_id), drawer.toggle()]"
               >
-                <mat-toolbar>{{ i.panel_name }}</mat-toolbar>
+                {{ i.panel_name }}
               </button>
             </td>
             <td>{{ i.mac_id }}</td>
@@ -99,7 +98,7 @@
                 mat-raised-button
                 (click)="[getId(i.panel_name), drawer1.toggle()]"
               >
-                <mat-toolbar><mat-icon>location_on</mat-icon></mat-toolbar>
+                <mat-icon>location_on</mat-icon>
               </button>
             </td>
           </tr>
