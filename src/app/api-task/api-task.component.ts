@@ -44,12 +44,8 @@ export class ApiTaskComponent implements OnInit {
   constructor(private http: HttpClient, private observer: BreakpointObserver) {}
 
   ngOnInit(): void {
-    const Http = new XMLHttpRequest();
-const url='http://uat.lightingmanager.in/panel/gettestlist?org_id=3';
-Http.open("GET", url);
-Http.send();
     this.http
-      .get(url)
+      .get('http://uat.lightingmanager.in/panel/gettestlist?org_id=3')
       .subscribe((Response) => {
         this.li = Response;
         this.lis = this.li.result;
